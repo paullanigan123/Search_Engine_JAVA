@@ -1,12 +1,3 @@
-/*
- * Author: Paul Lanigan 
- * Date: 1/4/2019
- * Description: Class that reads in a file then searches through it to find
- * 
- * 
- */
-package search_engine;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -18,24 +9,22 @@ public class Word_Search
 
 	static int count = 0;
 
-	public static String Search(String query) throws IOException
+	public static String Search(String term) throws IOException
 	{
+		String[] line=null;
 		String space;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		String input = query;
+		String input = term;
 		File f1 = new File("C:/Users/Paul/Desktop/Test.txt");
 
-		String[] line=null;
 
-		
-			FileReader file = new FileReader(f1);
-			 BufferedReader f = new BufferedReader(file);
+		FileReader file = new FileReader(f1);
+		BufferedReader f = new BufferedReader(file);
 
-		//  While loop which will run for as long as BufferedReader object can find content
 		count =0;
 			while((space=f.readLine())!=null)
 			{
-				line=space.split(" ");  //Split the word using space
+				line=space.split(" ");  //Splits the space from the word
 				for (String word : line) 
 				{
 					if (word.equals(input))   //Search for the given word
