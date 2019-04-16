@@ -1,27 +1,29 @@
-
+/*
+ * Author: Paul Lanigan 
+ * Date: 1/4/2019
+ * Description: Class that reads in a file then searches through it to find
+ * 
+ * 
+ */
+package search_engine;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.IOException;
-
 
 public class Word_Search 
 {
 
 	static int count = 0;
-	private static BufferedReader reader;
 
 	public static String Search(String query) throws IOException
 	{
 		String space;
-		setReader(new BufferedReader(new InputStreamReader(System.in)));
-		/*System.out.println("Enter Word to Search");
-		String input = reader.readLine();*/
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		String input = query;
-		File f1 = new File("C:/Users/Paul/Desktop/txt.txt");
+		File f1 = new File("C:/Users/Paul/Desktop/Test.txt");
 
 		String[] line=null;
 
@@ -33,12 +35,12 @@ public class Word_Search
 		count =0;
 			while((space=f.readLine())!=null)
 			{
-				line=space.split(" ");  //Splits the space from he elements in the array
+				line=space.split(" ");  //Split the word using space
 				for (String word : line) 
 				{
 					if (word.equals(input))   //Search for the given word
 					{
-						count++;    //If Present count is incremented
+						count++;    //Increments count if word is present
 					}
 				}
 			}
@@ -57,12 +59,4 @@ public class Word_Search
 		      
 		         
 		   }
-
-	public static BufferedReader getReader() {
-		return reader;
-	}
-
-	public static void setReader(BufferedReader reader) {
-		Word_Search.reader = reader;
-	}
 		} 	
