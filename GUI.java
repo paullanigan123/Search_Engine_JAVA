@@ -22,7 +22,6 @@ public class GUI extends JFrame implements ActionListener
    String answer = "";
    Word_Search file1 = new Word_Search();
       
-   // constructor
    GUI(String title)
    {
   
@@ -36,11 +35,9 @@ public class GUI extends JFrame implements ActionListener
 
 	   textfield1.setToolTipText("Enter your word here");//Action listener for when word is entered in
 	   textfield1.addActionListener(this);
-
-	   // add the GUI components to the frame
 	   add(textfield1);
 	   
-	   // adding panel (Part 5)
+	   //Panel and Layout changes
 	   panel = new JPanel(new FlowLayout());
 	   panel.setBackground(Color.red);
 	   JLabel label = new JLabel("Search Engine");
